@@ -31,7 +31,7 @@
             <RadioButton
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Female"/>
+                android:text="Male"/>
         </RadioGroup>
 
         <LinearLayout
@@ -43,9 +43,10 @@
             android:padding="6dp">
 
             <EditText
-                android:id="@+id/wightInput"
+                android:id="@+id/weightInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
                 android:hint="Weight"
                 android:layout_marginBottom="12dp"/>
 
@@ -53,6 +54,7 @@
                 android:id="@+id/heightInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
                 android:hint="height"
                 android:layout_marginBottom="12dp"/>
 
@@ -60,6 +62,7 @@
                 android:id="@+id/ageInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:inputType="number"
                 android:hint="Age" />
 
         </LinearLayout>
@@ -97,7 +100,7 @@
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:text="Result"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 android:textColor="#000000"/>
         </LinearLayout>
 

@@ -7,12 +7,13 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 
 
 public class HomeFragment extends Fragment {
 
-
-
+    private OnResultClickListener resultClickListener;
+    private OnCalculateClickListener calculateClickListener;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -22,7 +23,39 @@ public class HomeFragment extends Fragment {
 
 
         // TODO :
+        view.findViewById(R.id.homeCalculate).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (calculateClickListener == null) return;
+                calculateClickListener.onClick();
+            }
+        });
+
+        view.findViewById(R.id.homeResults).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (resultClickListener == null) return;
+                resultClickListener.onClick();
+            }
+        });
 
         return view;
     }
+
+    public interface OnCalculateClickListener {
+        void onClick();
+    }
+
+    public interface OnResultClickListener {
+        void onClick();
+    }
+
+    public void setOnCalculateClickListener(OnCalculateClickListener listener){
+        calculateClickListener = listener;
+    }
+
+    public void setOnResultClickListener(OnResultClickListener listener) {
+        resultClickListener = listener;
+    }
+
 }
